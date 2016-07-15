@@ -1,0 +1,92 @@
+<!-- Pledge -->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title> FightHaze</title>
+    <meta property="og:url"                content="http://fighthazepledge.appspot.com/pledge" />
+    <meta property="og:title"              content="FightHaze" />
+    <meta property="og:description"        content="To fight the haze, I pledge to buy products certified for sustainability whenever there are choices." />
+    <meta property="og:image"              content="http://fighthazepledge.appspot.com/images/smog.jpg" />
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../stylesheets/main.css">
+</head>
+
+<body> 
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=526913460813562";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+  
+  <div class="container-fluid">
+    <!-- Top bar -->
+    <div class="row-fluid top-container">
+      <div class="span5">
+        <a href="/"><img class="logo" src="../images/logo.png"></a>
+      </div>
+      {% if user_nickname %}
+      <div class="span4 offset8 signin-align">
+        <span> {{ user_nickname }} <a href="{{ logout }}">logout</a></span>
+      </div>	
+      {% else %}
+      <div class="span3 offset9 signin-align">
+        <span> Login with <a href="/fighthaze"><img src="../images/google.png"></a></span>
+      </div>
+      {% endif %}
+    </div>
+    <!-- End of top bar -->
+    
+    <!-- Main navigation -->
+    <div class="navbar">
+      <div class="navbar-inner">
+        <ul class="nav">
+          <li><a href="/">Home</a></li>
+	  <li><a href="/pledge">Pledge</a></li>
+	  {% if user_nickname %}
+	  <li><a href="/reminder">Reminder</a></li>
+	  {% endif %}
+          <li><a href="/about">About</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <h3 class="centertext">Make a pledge and share it on Facebook.</h2>
+
+    <div class="row-fluid">
+      <figure><img class="hazepic" src="../images/smog.jpg"></figure>
+      <p class="centertext"> To fight the haze, I pledge to buy products certified for sustainability whenever there are choices.</p>
+      <div class="fb-share-button offset5" data-href="http://fighthazepledge.appspot.com/pledge" data-layout="button_count"></div>
+    </div>
+    
+    <br>
+
+    <hr>
+    <h4> What you can do to fulfill your pledge </h4>
+    <div class="row-fluid">
+      <p> <b>Send your message to companies:</b> The World Wildlife Fund Singapore, the People's Movement to Stop Haze, and the Singapore Institute of International Affairs are running a campaign to stop the haze through consumer power. Sign the pledge at their site <a href="https://webreathewhatwebuy.com/" target="_blank">https://webreathewhatwebuy.com/</a> to support their campaign. </p>
+    </div>
+
+    <div class="row-fluid">
+      <p> <b> Paper products:</b> Use paper and forest products that are FSC certified. The <a href="https://ic.fsc.org/en" target="_blank">Forest Stewardship Council</a> is a non-profit organization dedicated to the promotion of sustainable forest management. Next time you are thinking of buying copy paper, tissue paper, paper boxes and other paper and forest products, look out for products that carry the FSC logo.</p>
+      <figure><center><img src="../images/FSC.jpg"></center></figure>
+    </div>
+
+   <div class="row-fluid">
+      <p> <b> Palm oil products:</b> Unfortunately, products that use only certified palm oil are not widely available. With many of us doing our parts, over time <a href="http://www.rspo.org/trademark/trademark-products-gallery" target="_blank">products</a> certified by bodies such as the <a href="http://www.rspo.org/" target="_blank">Roundtable on Sustainable Palm Oil (RSPO)</a> and carrying the RSPO logo should increase.</p> 
+      <figure><center><img src="../images/RSPO.png"></center></figure>
+      <p> In the mean time, you may want to consider supporting companies that score well on the <a href="http://www.ucsusa.org/global-warming/stop-deforestation/palm-oil-scorecard-2015#.Vwoa2pN96Rs" target="_blank">Palm Oil Scorecard</a> according to the Union of Concerned Scientists in the US.</p>
+    </div>
+
+    <div class="row-fluid">
+      <p> <b> Get reminders on your pledge:</b> <a href="/reminder">Login</a> (currently through Google accounts only) and sign up for email reminders to translate your pledge into action!</p>
+    </div>
+    <hr>
+    <div class="row-fluid">
+      <p class="centertext"> Image credit: <a href="https://commons.wikimedia.org/wiki/File:TOMS_indonesia_smog_lrg.jpg">NASA</a></p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+/* For the top bar */
+.top-container {
+    height: 100px;
+    position: relative;
+}
+
+/* For the logo */
+.logo {
+    height:100px;
+}
+
+/* For the sign-in on the right of the top bar */
+.signin-align {
+    position: absolute;
+    bottom: 0;
+    text-align: right;
+    padding-right: 40px;
+}
+
+/* For the picture of the haze */
+.hazepic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 400px; 
+}
+
+.fb-share-button
+{
+transform: scale(1.5);
+-ms-transform: scale(1.5);
+-webkit-transform: scale(1.5);
+-o-transform: scale(1.5);
+-moz-transform: scale(1.5);
+transform-origin: top left;
+-ms-transform-origin: top left;
+-webkit-transform-origin: top left;
+-moz-transform-origin: top left;
+-webkit-transform-origin: top left;
+}
+
+.centertext {
+    text-align: center;
+}
+
+/* Shift the text down 1cm */
+.top-pad-one {
+    margin-top: 1cm;
+}
+

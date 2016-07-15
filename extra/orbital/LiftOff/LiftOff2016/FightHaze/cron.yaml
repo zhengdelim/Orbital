@@ -1,0 +1,9 @@
+cron:
+- description: daily PSI reading
+  url: /getpsi
+  schedule: every day 15:00
+  timezone: Asia/Singapore
+- description: daily mailout
+  url: /sendreminder
+  schedule: every day 16:00
+  timezone: Asia/Singapore

@@ -1,0 +1,70 @@
+<!-- Reminder -->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title> FightHaze</title>
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../stylesheets/main.css">
+</head>
+<body>
+<div class="container-fluid">
+    <!-- Top bar -->
+    <div class="row-fluid top-container">
+        <div class="span5">
+           <a href="/"><img class="logo" src="../images/logo.png"></a>
+        </div>
+	{% if user_nickname %}
+         <div class="span4 offset8 signin-align">
+            <span> {{ user_nickname }} <a href="{{ logout }}">logout</a></span>
+        </div>	
+	 {% else %}
+        <div class="span3 offset9 signin-align">
+            <span> Login with <a href="/fighthaze"><img src="../images/google.png"></a></span>
+        </div>
+	{% endif %}
+    </div>
+    <!-- End of top bar -->
+
+    <!-- Main navigation -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav">
+                <li><a href="/">Home</a></li>
+		<li><a href="/pledge">Pledge</a></li>
+		<li><a href="/reminder">Reminder</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <h4>Create Reminder</h4>
+    <div class="row-fluid">
+    <form action="/reminder" method="post">
+        <fieldset>
+	  {% if curr_psi_limit %}
+          <p> Send me an email reminder of my pledge each time the PSI in Singapore exceeds <input class="input-small" type="number" name="psilimit" min="1" value="{{ curr_psi_limit }}"> for <input class="input-small" type="number" name="daylimit" min="1" max="{{ max_limit }}" value="{{ curr_day_limit }}"> consecutive days.</p>
+          <p><input type="submit" value="Edit"></p>
+	  {% else %}
+	  <p> Send me an email reminder of my pledge each time the PSI in Singapore exceeds <input class=" input-small" type="number" name="psilimit" min="1"> for <input class="input-small" type="number" name="daylimit" min="1" max="{{ max_limit }}"> consecutive days.</p>
+          <p><input type="submit" value="Submit"></p>
+	  {% endif %}
+        </fieldset>
+    </form>
+    </div>
+    <div>
+      {% if curr_psi_limit %}
+      <form action="/deletereminder" method="get">
+	<input type="submit" value="Remove Reminder">
+      </form>
+      {% endif %}
+    </div>
+
+    <hr>
+    <div>
+      <p>
+	<small>Credit: Haze data from <a href="https://data.gov.sg/dataset/psi" target="_blank">https://data.gov.sg/dataset/psi</a>. The datasets provided by the Singapore Government and its Statutory Boards via Data.gov.sg are governed by the Terms of Use available at https://data.gov.sg/terms. To the fullest extent permitted by law, the Singapore Government and its Statutory Boards are not liable for any damage or loss of any kind caused directly or indirectly by the use of the datasets or any derived analyses or applications.</small>
+      </p>
+    </div>
+</div>
+</body>
+</html>

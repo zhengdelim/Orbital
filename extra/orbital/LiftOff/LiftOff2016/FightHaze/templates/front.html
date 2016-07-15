@@ -1,0 +1,60 @@
+<!-- Front page for FightHaze -->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title> FightHaze</title>
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../stylesheets/main.css">
+</head>
+<body>
+<div class="container-fluid">
+    <!-- Top bar -->
+    <div class="row-fluid top-container">
+        <div class="span5">
+           <a href="/"><img class="logo" src="../images/logo.png"></a>
+        </div>
+	{% if user_nickname %}
+         <div class="span4 offset8 signin-align">
+            <span> {{ user_nickname }} <a href="{{ logout }}">logout</a></span>
+        </div>	
+	 {% else %}
+        <div class="span3 offset9 signin-align">
+            <span> Login with <a href="/fighthaze"><img src="../images/google.png"></a></span>
+        </div>
+	{% endif %}
+    </div>
+    <!-- End of top bar -->
+
+    <!-- Main navigation -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav">
+                <li><a href="/">Home</a></li>
+		<li><a href="/pledge">Pledge</a></li>
+		{% if user_nickname %}
+		<li><a href="/reminder">Reminder</a></li>
+		{% endif %}
+                <li><a href="/about">About</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span8">
+            <figure><img src="../images/Fires.png"><figcaption><br>NASA <a href="http://earthdata.nasa.gov/data/near-real-time-data/data/hazards-and-disasters/fires" target="_blank">fire data</a> projected on Google Earth. Image source: the <a href="https://www.washingtonpost.com/news/worldviews/wp/2013/06/21/satellite-images-and-nasa-data-show-vast-forest-fires-blanketing-singapore-with-record-pollution" target="_blank">Washington Post</a>.</figcaption></figure>
+        </div>
+        <div class="span4">
+            <div class="top-pad-one">
+                <p> Frustrated with the never ending haze? Want to do your part to fight the haze?</p>
+
+                <p> Make a pledge to buy products that are certified for sustainability. Do your part to reduce the demand for non-sustainable products.</p>
+
+                <p> Make your pledge public on Facebook so that all people within <a href="https://en.wikipedia.org/wiki/Six_degrees_of_separation" target="_blank">6 degrees of separation</a> follow suit and take collective action.</p>
+
+		<p> Log in and sign up to send yourself a reminder each time the PSI exceed your pre-specified tolerance.</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
